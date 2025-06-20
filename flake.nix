@@ -1,5 +1,5 @@
 {
-  description = "A basic flake with a shell";
+  description = "RMRF Nix Development Flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -85,7 +85,7 @@
           buildInputs = [
             pkgs.flutter
             androidSdk
-            pkgs.jdk
+            pkgs.jdk17
 
             # C libraries
             pkgs.atk
@@ -123,7 +123,7 @@
               harfbuzz
               pango
             ];
-          JAVA_HOME = "${pkgs.jdk}/lib/openjdk";
+          JAVA_HOME = "${pkgs.jdk17}/lib/openjdk";
           ANDROID_HOME = "${androidSdk}/libexec/android-sdk";
           ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
           ANDROID_NDK_ROOT = "${ANDROID_HOME}/ndk-bundle";
